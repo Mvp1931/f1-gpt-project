@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { newAccount } from "./lib/ApiHelper";
+
 import Image from "next/image";
 import F1GPT_Logo from "./assets/f1gpt_logo.png";
 import { useChat } from "ai/react";
@@ -21,7 +25,7 @@ const Home = () => {
 
     const noMessages = !messages || messages.length === 0;
 
-    const handlePrompt = (promptText) => {
+    const handlePrompt = (promptText: string) => {
         const message: Message = {
             id: crypto.randomUUID(),
             content: promptText,
@@ -29,6 +33,22 @@ const Home = () => {
         };
         append(message);
     };
+
+    const router = useRouter();
+    // implement login authentication
+    useEffect(() => {
+        const checkSession = async () => {
+            try {
+                const user = await newAccount.get();
+                console.log(`${user.email} is logged in.`);
+            } catch (error) {
+                console.error("Error occurred while checking session:", error);
+                console.log("Redirecting to login page...");
+                router.push("/auth/login");
+            }
+        };
+        checkSession();
+    }, [router]);
 
     return (
         <main>

@@ -19,16 +19,16 @@ type SimilarityMetric = "cosine" | "dot_product" | "euclidean";
 
 const f1Data = [
     "https://en.wikipedia.org/wiki/Formula_One",
+    "https://en.wikipedia.org/wiki/2022_Formula_One_World_Championship",
+    "https://en.wikipedia.org/wiki/2023_Formula_One_World_Championship",
+    "https://en.wikipedia.org/wiki/2024_Formula_One_World_Championship",
     "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
-    "https://www.formula1.com/en/racing/2024",
-    "https://www.formula1.com/en/results/2024/races",
-    "https://www.formula1.com/en/results/2024/team",
-    "https://www.formula1.com/en/results/2024/fastest-laps",
-    "https://www.formula1.com/en/teams",
     "https://www.skysports.com/f1",
-    "https://www.skysports.com/f1/standings",
-    "https://www.skysports.com/f1/stats",
+    "https://www.skysports.com/f1/stats/2021/races",
+    "https://www.skysports.com/f1/stats/2022/races",
+    "https://www.skysports.com/f1/stats/2023/races",
     "https://www.formula1.com/en/latest",
+    "https://sportstar.thehindu.com/motorsport/f1/",
 ];
 
 const client = new DataAPIClient(ASTRA_DB_APPLICATION_TOKEN);
@@ -42,7 +42,7 @@ const splitter = new RecursiveCharacterTextSplitter({
 });
 
 const createCollection = async (
-    similarityMetric: SimilarityMetric = "dot_product"
+    similarityMetric: SimilarityMetric = "cosine"
 ) => {
     const result = await db.createCollection(ASTRA_DB_COLLECTION, {
         vector: {

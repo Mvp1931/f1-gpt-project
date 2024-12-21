@@ -15,6 +15,7 @@
         "@langchain/community": "^0.3.19",
         "@langchain/core": "^0.3.24",
         "ai": "^4.0.20",
+        "appwrite": "^16.1.0",
         "dotenv": "^16.4.7",
         "f1-gpt": "file:",
         "langchain": "^0.3.7",

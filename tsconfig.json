@@ -33,7 +33,7 @@
     "**/*.tsx",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-  ],
+, "app/lib/ApiHelper.js"  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

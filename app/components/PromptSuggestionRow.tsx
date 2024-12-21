@@ -2,7 +2,7 @@ import PromptSuggestionButton from "./PromptSuggestionButton";
 
 const PromptSuggestionRow = ({ onPromptClick }) => {
     const prompts = [
-        "Who is head of Aston martin F! academy Team?",
+        "Who is head of Aston martin F1 academy Team?",
         "Who is the current F1 world drivers champion?",
         "Who is highest paid F1 driver?",
         "Who is the fastest F1 driver?",

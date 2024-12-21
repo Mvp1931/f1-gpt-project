@@ -44,7 +44,7 @@ section.populated {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .starter-text {
@@ -131,6 +131,21 @@ input.submit-button {
 
 .bubble.assistant {
     border-radius: 20px 20px 20px 0;
-    background-color: #9fa9c0;
-    margin-left: auto;
+    background-color: #cdebcb;
+    margin-right: auto;
+}
+
+.prompt-suggestion-row {
+    width: 100%;
+}
+
+.prompt-suggestion-button {
+    margin: 8px;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    background-color: #fafafa;
+    border-radius: 10px;
+    color: #383838;
+    box-shadow: #959da3 0 8px 24px;
 }
